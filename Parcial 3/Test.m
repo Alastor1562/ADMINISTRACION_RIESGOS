@@ -1,7 +1,8 @@
 clear all;close all;clc
 rng(42);
+format bank
 % Descargamos los datos
-cartera=xlsread('Test CRO24.xlsx','port','B2:G2171');
+cartera=xlsread('Test CRO24.xlsx','clo3','B2:G1021');
 
 EAD=cartera(:,1);
 PD=cartera(:,2);
@@ -29,4 +30,3 @@ plotline = @(x,color) plot([x x],ylim,'LineWidth',2,'Color',color);
 plotline(pr.EL,'b');
 plotline(pr.VaR,'r');
 cvarline = plotline(pr.CVaR,'m');
-format bank
